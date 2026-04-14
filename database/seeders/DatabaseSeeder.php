@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             AlunoSeeder::class,
             CursoSeeder::class,
             TurmaSeeder::class,
+            MatriculaSeeder::class,
         ]);
 
         User::factory()->create([

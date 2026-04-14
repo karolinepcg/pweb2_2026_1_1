@@ -29,6 +29,9 @@
                     <div class="col-md-3">
                         <a href="{{ url('curso/create') }}" class="btn btn-success"> Novo</a>
                     </div>
+                    <div class="col-md-3">
+                        <a href="{{ url('curso/chart') }}" class="btn btn-danger"> Gráfico</a>
+                    </div>
                 </div>
             </form>
         </div>
