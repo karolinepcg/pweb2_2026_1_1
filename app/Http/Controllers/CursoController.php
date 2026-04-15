@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Curso;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use App\Charts\QtdAlunoCurso;
+>>>>>>> upstream/main
 
 class CursoController extends Controller
 {
@@ -88,4 +92,12 @@ class CursoController extends Controller
 
         return view('curso.list', ['dados' => $dados]);
     }
+<<<<<<< HEAD
+=======
+
+    function chart(QtdAlunoCurso $chart)
+    {
+        return view('curso.chart', ['chart' => $chart->build()]);
+    }
+>>>>>>> upstream/main
 }

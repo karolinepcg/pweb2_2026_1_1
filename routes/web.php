@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 //alteration
+=======
+
+>>>>>>> upstream/main
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\TurmaController;
@@ -22,6 +26,10 @@ route::put('aluno/update/{id}', [AlunoController::class, 'update'])->name('aluno
 route::post('/aluno/search', [AlunoController::class, 'search'])->name('aluno.search');
 
 
+<<<<<<< HEAD
+=======
+route::get('curso/chart', [\App\Http\Controllers\CursoController::class, 'chart'])->name('curso.chart');
+>>>>>>> upstream/main
 route::resource('curso', \App\Http\Controllers\CursoController::class);
 route::get('curso/{curso}/turmas', [TurmaController::class, 'index'])->name('curso.turmas');
 route::get(
@@ -31,6 +39,10 @@ route::get(
 route::post('/curso/search', [\App\Http\Controllers\CursoController::class, 'search'])
     ->name('curso.search');
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/main
 route::resource('turma', \App\Http\Controllers\TurmaController::class);
 route::post('/turma/search', [\App\Http\Controllers\TurmaController::class, 'search'])
     ->name('turma.search');
