@@ -21,10 +21,7 @@ class DatabaseSeeder extends Seeder
             AlunoSeeder::class,
             CursoSeeder::class,
             TurmaSeeder::class,
-<<<<<<< HEAD
-=======
             MatriculaSeeder::class,
->>>>>>> upstream/main
         ]);
 
         User::factory()->create([

@@ -29,12 +29,9 @@
                     <div class="col-md-3">
                         <a href="{{ url('curso/create') }}" class="btn btn-success"> Novo</a>
                     </div>
-<<<<<<< HEAD
-=======
                     <div class="col-md-3">
                         <a href="{{ url('curso/chart') }}" class="btn btn-danger"> Gráfico</a>
                     </div>
->>>>>>> upstream/main
                 </div>
             </form>
         </div>
