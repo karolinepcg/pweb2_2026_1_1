@@ -23,11 +23,15 @@ route::post('/aluno/search', [AlunoController::class, 'search'])->name('aluno.se
 
 route::get('curso/chart', [\App\Http\Controllers\CursoController::class, 'chart'])->name('curso.chart');
 route::resource('curso', \App\Http\Controllers\CursoController::class);
+
+route::get('curso/report', [AlunoController::class, 'edit'])->name('aluno.edit');
+//alteraçãos
 route::get('curso/{curso}/turmas', [TurmaController::class, 'index'])->name('curso.turmas');
 route::get(
     'curso/{curso}/turmas/create',
     [TurmaController::class, 'create']
 )->name('curso.turmas.create');
+route::get('curso/report', [AlunoController::class, 'edit'])->name('aluno.edit');
 route::post('/curso/search', [\App\Http\Controllers\CursoController::class, 'search'])
     ->name('curso.search');
 route::resource('turma', \App\Http\Controllers\TurmaController::class);

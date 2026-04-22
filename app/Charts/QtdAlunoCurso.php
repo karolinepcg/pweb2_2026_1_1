@@ -25,23 +25,24 @@ class QtdAlunoCurso
 
         $alunoPorCurso = DB::table('matriculas')
             ->join('cursos', 'cursos.id', '=', 'matriculas.curso_id')
-            ->select('cursos.nome', 'count(1) as qtd_alunos')
+            ->select('cursos.nome', DB::raw('count(1) as qtd_alunos'))
             ->groupBy('cursos.nome')
-            ->orderBy('qtd_alunos', 'desc');
+            ->orderBy('qtd_alunos', 'desc')
+            ->get();
 
         $qtdAlunos = [];
         $nomeCursos = [];
 
         foreach ($alunoPorCurso as $item) {
-          //  dd($item['nome']);
+            $qtdAlunos []= $item->qtd_alunos;
+            $nomeCursos [] = $item->nome_cursos;//extrair dados significativos e intersctar
+
         }
-
-
 
         return $this->chart->pieChart()
             ->setTitle('QTD Alunos por Curso')
             ->setSubtitle('Season 2021.')
-            ->addData([40, 50, 30])
-            ->setLabels(['Player 7', 'Player 10', 'Player 9']);
+            ->addData('qtd_alunos')
+            ->setLabels('nome_cursos');
     }
 }

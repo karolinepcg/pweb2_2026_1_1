@@ -32,6 +32,12 @@
                     <div class="col-md-3">
                         <a href="{{ url('curso/chart') }}" class="btn btn-danger"> Gráfico</a>
                     </div>
+                    <div class="col-md-3">
+                        <a href="{{ url('curso/chart') }}" class="btn btn-secondary"> Relatório</a>
+                    </div>
+                     <div class="col-md-3">
+                        <a href="{{ url('curso/chart') }}" class="btn btn-secondary"> Matriculados ursos</a>
+                    </div>
                 </div>
             </form>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Curso;
+use PDF;
 use Illuminate\Http\Request;
 
 use App\Charts\QtdAlunoCurso;
@@ -94,5 +95,36 @@ class CursoController extends Controller
     function chart(QtdAlunoCurso $chart)
     {
         return view('curso.chart', ['chart' => $chart->build()]);
+    }
+
+    public function report()
+
+    {
+        $cursos = Curso::orderBy("nome")->get();
+
+        $data =
+         ['titulo' => 'Relatóro Listagem de cursos',
+          "cursos" => $cursos,
+         ];
+
+        $pdf = PDF::loadView('curso.report', $data);
+
+        return $pdf->download('relatorio_listagem_aluno_curso.pdf');
+
+    }
+    public function reportMatriculados()
+
+    {
+        $cursos = Curso::orderBy("alunos.categoria")->orderBy('id')->get();
+
+        $data =
+         ['titulo' => 'Relatóro Listagem de cursos',
+          "cursos" => $cursos,
+         ];
+
+        $pdf = PDF::loadView('curso.report', $data);
+
+        return $pdf->download('relatorio_listagem_aluno_curso.pdf');
+
     }
 }
